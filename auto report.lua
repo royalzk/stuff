@@ -315,31 +315,28 @@ local success, error = pcall(function()
 			print("ar: reported " .. player.Name);
 		end;
 	end;
-	function handler(player, msg)
-		local thing, reason;
-		msg = string.lower(msg);
-		for i, v in next, messages do
-			if string.match(msg, i) then
-				thing, reason, offensive = v[1], v[2], i;
-				if (getgenv()).autoreport.Advertise == true then
-					local args = {
-						[1] = "/w " .. player.Name .. " you got mass reported by .gg/outliershub",
-						[2] = "All"
-					};
-					(game:GetService("ReplicatedStorage")).DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args));
-				end;
-			end;
-		end;
-		if thing and reason and offensive then
-			lib:report(player, thing, reason, offensive);
-		end;
-	end;
 end);
 if success then
 	print("ar: loaded functions successfully, handling players now");
 else
 	print("ar: got error, " .. error);
 end;
+for i, plr in pairs(game.Players:GetPlayers()) do
+	if plr ~= game.Players.LocalPlayer then
+		plr.Chatted:Connect(function(msg)
+			(getgenv()).autoreport.Message = msg;
+			handler(plr, msg);
+		end);
+	end;
+end;
+game.Players.PlayerAdded:Connect(function(plr)
+	if plr ~= game.Players.LocalPlayer then
+		plr.Chatted:Connect(function(msg)
+			(getgenv()).autoreport.Message = msg;
+			handler(plr, msg);
+		end);
+	end;
+end);
 
 (getgenv()).library:MakeNotification({
 	Name = "Loaded!",
