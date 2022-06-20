@@ -27,6 +27,14 @@ local messages = {
 		"Scamming",
 		"he's advertising hacks (viruses)"
 	},
+	hacker = {
+		"Scamming",
+		"he's advertising hacks (viruses)"
+	},
+	hacking = {
+		"Scamming",
+		"he's advertising hacks (viruses)"
+	},
 	cheat = {
 		"Scamming",
 		"he's advertising hacks (viruses)"
