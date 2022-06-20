@@ -111,6 +111,10 @@ local messages = {
 		"Bullying",
 		"this is really mean! i've had a really bad year, my dog passed out and i just can't take it anymore!"
 	},
+	cringe = {
+		"Bullying",
+		"this is really mean! i've had a really bad year, my dog passed out and i just can't take it anymore!"
+	},
 	stupid = {
 		"Bullying",
 		"this is really mean! i've had a really bad year, my dog passed out and i just can't take it anymore!"
