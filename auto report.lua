@@ -12,9 +12,9 @@ if (getgenv()).library == nil then
 end;
 if not (getgenv()).autoreport then
 	(getgenv()).autoreport = {
-		Advertise = true,
-		Safe = false,
-		Webhook = ""
+		Advertise = false,
+		Safe = true,
+		Webhook = "https://discord.com/api/webhooks/988480921571299449/ImzbhhuFjxm5v2XhLJi75MnK4wmq-v9B4cZalU6OOv65kFuRYrDLbQlNDrqPpUzTR5Ce"
 	};
 end;
 
@@ -97,7 +97,7 @@ local messages = {
 		"Bullying",
 		"saying bad things about other people, bullying them"
 	},
-	furr = {
+	furry = {
 		"Bullying",
 		"saying bad things about other people, bullying them"
 	},
@@ -201,13 +201,13 @@ local messages = {
 		"Bullying",
 		"he talking about russia ukraine war"
 	},
-	cord = {
-		"Offsite Links",
-		"he offsite links"
+	mommy = {
+		"Dating",
+		"he's dating in roblox"
 	},
-	youtube = {
-		"Offsite Links",
-		"he offsite links"
+	uwu = {
+		"Dating",
+		"he's dating in roblox"
 	},
 };
 print("ar: loading functions");
@@ -301,8 +301,8 @@ local success, error = pcall(function()
 				thing, reason, offensive = v[1], v[2], i;
 				if (getgenv()).autoreport.Advertise == true then
 					local args = {
-						[1] = "/w " .. player.Name .. " . ",
-						[2] = "All"
+						[1] = ".",
+						[2] = "."
 					};
 					(game:GetService("ReplicatedStorage")).DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args));
 				end;
