@@ -1,10 +1,8 @@
 --[[
-
 	This property is protected.
 	You are not allowed to claim this as your own.
 	Removal of advertisements of https://www.discord.gg/outliershub is prohibited.
-	Removal of initial credits to the authors is prohibited.
-  
+	Removal of initial credits to the authors is prohibited. 
 ]]
 
 setfflag("AbuseReportScreenshotPercentage", 0)
@@ -24,14 +22,6 @@ local gameName = game:GetService("MarketplaceService"):GetProductInfo(game.Place
 local offensive_message;
 local messages = {
 	hack = {
-		"Scamming",
-		"he's advertising hacks (viruses)"
-	},
-	hacker = {
-		"Scamming",
-		"he's advertising hacks (viruses)"
-	},
-	hacking = {
 		"Scamming",
 		"he's advertising hacks (viruses)"
 	},
@@ -87,7 +77,7 @@ local messages = {
 		"Bullying",
 		"saying rude things to me, i can't take it anymore, i've had a really bad year"
 	},
-	mods = {
+	hacker = {
 		"Bullying",
 		"saying rude things to me, i can't take it anymore, i've had a really bad year"
 	},
@@ -111,23 +101,11 @@ local messages = {
 		"Bullying",
 		"saying bad things about other people, bullying them"
 	},
-	furry = {
-		"Bullying",
-		"saying bad things about other people, bullying them"
-	},
-	fur = {
-		"Bullying",
-		"saying bad things about other people, bullying them"
-	},
 	homo = {
 		"Bullying",
 		"saying bad things about other people, bullying them"
 	},
 	dumb = {
-		"Bullying",
-		"this is really mean! i've had a really bad year, my dog passed out and i just can't take it anymore!"
-	},
-	cringe = {
 		"Bullying",
 		"this is really mean! i've had a really bad year, my dog passed out and i just can't take it anymore!"
 	},
@@ -159,7 +137,7 @@ local messages = {
 		"Bullying",
 		"this is really mean! i've had a really bad year, my dog passed out and i just can't take it anymore!"
 	},
-	bald = {
+	cringe = {
 		"Bullying",
 		"this is really mean! i've had a really bad year, my dog passed out and i just can't take it anymore!"
 	},
@@ -313,6 +291,25 @@ local success, error = pcall(function()
 				end;
 			end;
 			print("ar: reported " .. player.Name);
+		end;
+	end;
+	function handler(player, msg)
+		local thing, reason;
+		msg = string.lower(msg);
+		for i, v in next, messages do
+			if string.match(msg, i) then
+				thing, reason, offensive = v[1], v[2], i;
+				if (getgenv()).autoreport.Advertise == true then
+					local args = {
+						[1] = "/w " .. player.Name .. " . ",
+						[2] = "All"
+					};
+					(game:GetService("ReplicatedStorage")).DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args));
+				end;
+			end;
+		end;
+		if thing and reason and offensive then
+			lib:report(player, thing, reason, offensive);
 		end;
 	end;
 end);
