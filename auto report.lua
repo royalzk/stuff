@@ -103,6 +103,14 @@ local messages = {
 		"Bullying",
 		"saying bad things about other people, bullying them"
 	},
+	furry = {
+		"Bullying",
+		"saying bad things about other people, bullying them"
+	},
+	fur = {
+		"Bullying",
+		"saying bad things about other people, bullying them"
+	},
 	homo = {
 		"Bullying",
 		"saying bad things about other people, bullying them"
