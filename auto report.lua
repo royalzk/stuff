@@ -45,9 +45,9 @@ local messages = {
 		"Bullying",
 		"saying bad things about my parents"
 	},
-	parentless = {
+	retard = {
 		"Bullying",
-		"saying bad things about my parents"
+		"saying bad things about me"
 	},
 	parents = {
 		"Bullying",
