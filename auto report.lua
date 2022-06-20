@@ -209,6 +209,14 @@ local messages = {
 		"Dating",
 		"he's dating in roblox"
 	},
+	woman = {
+		"Bullying",
+		"saying bad things and being sexist"
+	},
+	mother = {
+		"Bullying",
+		"saying bad things about my parents"
+	},
 };
 print("ar: loading functions");
 local lib = {};
