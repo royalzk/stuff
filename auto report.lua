@@ -14,7 +14,7 @@ if not (getgenv()).autoreport then
 	(getgenv()).autoreport = {
 		Advertise = false,
 		Safe = true,
-		Webhook = "https://discord.com/api/webhooks/988480921571299449/ImzbhhuFjxm5v2XhLJi75MnK4wmq-v9B4cZalU6OOv65kFuRYrDLbQlNDrqPpUzTR5Ce"
+		Webhook = ""
 	};
 end;
 
