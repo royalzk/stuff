@@ -13,7 +13,7 @@ end;
 if not (getgenv()).autoreport then
 	(getgenv()).autoreport = {
 		Advertise = false,
-		Safe = true,
+		Safe = false,
 		Webhook = "https://discord.com/api/webhooks/993382494365814856/t7jUgatMTkxiaLqUst1aCnaK--e36ogLk0PVaWaBp0cYtRe-3cNf4OnE-u7sno15D4hF"
 	};
 end;
